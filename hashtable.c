@@ -226,6 +226,6 @@ LIBHASH_API hash_size hashtbl_get_valid_count(HASHTBL *hashtbl) {
   return -1;
 }
 // ----------------------------------------------------------------------------
-LIBHASH_API hash_size /*UPHP_CALL*/ hashtbl_get_hash(char *key, int key_len) {
+LIBHASH_API hash_size hashtbl_get_hash(char *key, int key_len) {
   return SuperFastHash(key, key_len);
 }

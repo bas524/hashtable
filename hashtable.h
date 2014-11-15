@@ -10,9 +10,8 @@
 #endif
 
 #ifdef _WINNT
-#define UPHP_CALL __cdecl
 #ifndef LIBHASH_API
-#if defined(UPHP_LIBHASH_LIBRARY)
+#if defined(LIBHASH_LIBRARY)
 #define LIBHASH_API extern "C" __declspec(dllexport)
 #else
 #define LIBHASH_API extern "C" __declspec(dllimport)
@@ -21,15 +20,11 @@
 #endif /*WINNT*/
 
 #ifdef _UNIX
-#define UPHP_CALL
 #ifndef LIBHASH_API
 #if defined( __cplusplus)
 #define LIBHASH_API extern "C"
 #else
-#if !defined(QT_GCC_SO)
 #define LIBHASH_API extern
-#else
-#define LIBHASH_API extern "C"
 #endif
 #endif
 #endif
